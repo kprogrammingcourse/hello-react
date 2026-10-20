@@ -1,7 +1,6 @@
 import Skills from "./Skills";
 
 export default function Greeting({ profile }) {
-  console.log(profile);
   return (
     <section className="greeting-card">
       <h1>Hello, I'm {profile.name} 👋</h1>
