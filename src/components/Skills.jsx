@@ -9,7 +9,6 @@ const Skills = ({ skills }) => {
 
   const fullList = () => {
     setList(skills);
-    console.log(list);
     setFullListWord(false);
   };
 
