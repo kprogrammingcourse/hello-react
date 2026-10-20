@@ -17,16 +17,12 @@ const Skills = ({ skills }) => {
         <>
           <ul>
             {list.map((skill) => {
-              return (
-                <li key={skill}>
-                  <p>{skill}</p>
-                </li>
-              );
+              return <li key={skill}>{skill}</li>;
             })}
           </ul>
           {skills.length > 3 && (
-            <button onClick={() => functionOne()}>
-              {list.length <= 3 ? `show more (${skills.length})` : "show less"}
+            <button type="button" onClick={functionOne}>
+              {list.length <= 3 ? `Show all (${skills.length})` : "Show less"}
             </button>
           )}
         </>
