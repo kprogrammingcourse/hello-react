@@ -1,37 +1,34 @@
 import { useState } from "react";
 
-const Skills = ({ skills }) => {
-  if (skills === undefined) {
-    skills = [];
-  }
-  let wholeList = skills.slice(0, 3);
-  const [list, setList] = useState(wholeList);
+const VISIBLE_COUNT = 3;
 
-  const showList = () => {
-    if (list.length <= 3) {
-      setList(skills);
-    } else if (list.length > 3) {
-      setList(skills.slice(0, 3));
-    }
-  };
+export default function Skills({ skills = [] }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  if (skills.length === 0) {
+    return null;
+  }
+
+  const visibleSkills = isExpanded ? skills : skills.slice(0, VISIBLE_COUNT);
+  const hasMoreSkills = skills.length > VISIBLE_COUNT;
+
+  function toggleSkills() {
+    setIsExpanded(!isExpanded);
+  }
 
   return (
-    <>
-      {skills.length > 0 && (
-        <>
-          <ul>
-            {list.map((skill) => {
-              return <li key={skill}>{skill}</li>;
-            })}
-          </ul>
-          {skills.length > 3 && (
-            <button type="button" onClick={showList}>
-              {list.length <= 3 ? `Show all (${skills.length})` : "Show less"}
-            </button>
-          )}
-        </>
+    <div>
+      <ul>
+        {visibleSkills.map((skill) => (
+          <li key={skill}>{skill}</li>
+        ))}
+      </ul>
+
+      {hasMoreSkills && (
+        <button type="button" onClick={toggleSkills} aria-expanded={isExpanded}>
+          {isExpanded ? "Show less" : `Show all (${skills.length})`}
+        </button>
       )}
-    </>
+    </div>
   );
-};
-export default Skills;
+}
