@@ -7,7 +7,7 @@ const person_1 = {
     "Strength",
     "Leadership",
     "Commitment",
-    "Enthusiastic",
+    "Smart",
   ],
 };
 

@@ -1,12 +1,16 @@
 import { useState } from "react";
 
 const Skills = ({ skills }) => {
-  const [list, setList] = useState(skills.slice(0, 3));
+  if (skills === undefined) {
+    skills = [];
+  }
+  let wholeList = skills.slice(0, 3);
+  const [list, setList] = useState(wholeList);
 
-  const functionOne = () => {
+  const showList = () => {
     if (list.length <= 3) {
       setList(skills);
-    } else if (list.length === 6) {
+    } else if (list.length > 3) {
       setList(skills.slice(0, 3));
     }
   };
@@ -21,7 +25,7 @@ const Skills = ({ skills }) => {
             })}
           </ul>
           {skills.length > 3 && (
-            <button type="button" onClick={functionOne}>
+            <button type="button" onClick={showList}>
               {list.length <= 3 ? `Show all (${skills.length})` : "Show less"}
             </button>
           )}
