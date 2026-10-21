@@ -1,12 +1,15 @@
 import { useState } from "react";
 
 const Skills = ({ skills }) => {
+  if (skills === undefined) {
+    skills = [];
+  }
   const [list, setList] = useState(skills.slice(0, 3));
 
   const functionOne = () => {
     if (list.length <= 3) {
       setList(skills);
-    } else if (list.length === 6) {
+    } else if (list.length > 3) {
       setList(skills.slice(0, 3));
     }
   };
