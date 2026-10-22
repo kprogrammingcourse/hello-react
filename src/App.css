@@ -16,7 +16,7 @@
 
 .greeting-card {
   width: 100%;
-  max-width: 420px;
+  max-width: 320px;
   padding: 2rem;
   background-color: #ffffff;
   border-radius: 16px;
@@ -43,5 +43,17 @@
 
 .app__footer {
   font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.team {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.team__empty {
   color: #6b7280;
 }

@@ -6,9 +6,10 @@ My first React application: a responsive personal greeting card built with React
 
 ## Features
 
-- Reusable `Greeting` component that receives data through props
-- Responsive, centered card layout
-- Custom favicon and page metadata
+- Displays a team of player greeting cards.
+- Each card shows the player's name, role, bio, and skills.
+- Responsive layout that displays cards side by side and wraps to the next line when needed.
+- Adding a new player only requires editing the data file.
 
 ## Tech Stack
 
@@ -40,11 +41,14 @@ npm run dev
 ```text
 src/
 ├── components/
-│   └── Greeting.jsx   # Greeting card component (props: name, role)
-├── App.jsx            # Root component
+│   ├── Greeting.jsx   # Player greeting card component
+│   └── Skills.jsx     # Player skills component
+├── data/
+│   └── team.js        # Team players data
+├── App.jsx            # Root component that renders the team
 ├── App.css            # Layout and card styles
 ├── index.css          # Global styles
-└── main.jsx           # Entry point
+└── main.jsx           # Application entry point
 ```
 
 ## What I Learned
