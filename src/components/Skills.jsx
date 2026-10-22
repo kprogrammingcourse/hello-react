@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const VISIBLE_COUNT = 3;
 
-export default function Skills({ skills = [] }) {
+const Skills = ({ skills = [] }) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   if (skills.length === 0) {
@@ -31,4 +31,6 @@ export default function Skills({ skills = [] }) {
       )}
     </div>
   );
-}
+};
+
+export default Skills;

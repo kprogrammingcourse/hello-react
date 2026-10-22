@@ -16,14 +16,14 @@ const team = [
   {
     id: 2,
     name: "Jessica",
-    role: "basketball player",
+    role: "soccer player",
     bio: "Powerful defender who dominates the air.",
     skills: ["Agility", "Stamina", "Communication"],
   },
   {
     id: 3,
     name: "Sandy",
-    role: "runner",
+    role: "soccer player",
     bio: "Creative playmaker who opens up defenses.",
     skills: [],
   },
