@@ -4,12 +4,17 @@ import "./App.css";
 
 const App = () => {
   return (
-    <div className="team">
-      {team.length === 0 ? (
-        <h1 className="team_empty">"No players yet"</h1>
-      ) : (
-        team.map((player) => <Greeting key={player.id} player={player} />)
-      )}
+    <div className="app">
+      <main>
+        <div className="team">
+          {team.length === 0 ? (
+            <p className="team__empty">No players yet.</p>
+          ) : (
+            team.map((player) => <Greeting key={player.id} player={player} />)
+          )}
+        </div>
+      </main>
+      <footer className="app__footer">Built with React + Vite</footer>
     </div>
   );
 };
